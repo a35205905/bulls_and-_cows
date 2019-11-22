@@ -1,5 +1,9 @@
+from terminaltables import AsciiTable
 from getpass import getpass
 import random
+
+HERD = ['回合', '猜謎數字', '結果']
+CONTENT = []
 
 def main():
     print('-----幾A幾B-----')
@@ -24,11 +28,12 @@ def get_is_repeat_game():
 def game_start():
     ans = get_ans()
     print('設定完成 遊戲開始!!!!!')
+    # print('-----猜謎數字-----')
     round = 1
     while True:
-        print('-----猜謎數字-----')
         guess = get_user_ans()
         a, b = get_result(ans, guess)
+        CONTENT.append([round, ''.join(guess), '{a}A{b}B'.format(a=a, b=b)])
         if a == 4:
             break
         else:
@@ -44,6 +49,8 @@ def game_start():
         ans=''.join(ans),
         round=round
     ))
+    table = AsciiTable([HERD, *CONTENT])
+    print(table.table)
 
 # 取得答案
 def get_ans():
