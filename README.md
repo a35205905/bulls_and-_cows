@@ -2,7 +2,7 @@
 
 > ***每組數字為4位數，且不重複***
 
-## 規則
+## Rules
 1. 出題者選擇手動輸入答案或是電腦選號
     - 手動範例：`1234`
 2. 猜題者輸入數字
@@ -11,3 +11,10 @@
     - B：位置不同數字一樣
 
 ![result](./result.png)
+
+## Do before run
+- env & install packing：`$ pipenv install`
+- run env：`$ pipenv shell`
+
+## Run
+- run：`$ python3 main.py`
